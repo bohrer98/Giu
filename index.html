@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Um convite para a Giu 💙</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   CONFIGURAÇÕES
+========================================================= */
+
+:root {
+    --blue: #2498d0;
+    --blue-light: #53b9e8;
+    --blue-dark: #071b2c;
+    --navy: #0b2438;
+    --cream: #fff8ee;
+    --gold: #c9a45c;
+    --white: #ffffff;
+    --text-light: #dceaf3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--blue-dark);
+    color: var(--cream);
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   FUNDO
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(36, 152, 208, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(36, 152, 208, 0.12),
+            transparent 35%
+        ),
+        var(--blue-dark);
+}
+
+.glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.12;
+}
+
+.glow-1 {
+    background: var(--blue);
+
+    top: -150px;
+    left: -100px;
+}
+
+.glow-2 {
+    background: var(--blue-light);
+
+    bottom: -150px;
+    right: -100px;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,.4) 1px, transparent 1px);
+
+    background-size:
+        120px 120px,
+        190px 190px;
+
+    background-position:
+        20px 30px,
+        80px 100px;
+
+    opacity: .25;
+}
+
+
+/* =========================================================
+   TELAS
+========================================================= */
+
+.screen {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   TELA INICIAL
+========================================================= */
+
+#intro {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+#intro.hide {
+    opacity: 0;
+
+    transform: scale(1.04);
+
+    pointer-events: none;
+}
+
+#invite {
+    display: none;
+
+    opacity: 0;
+}
+
+#invite.visible {
+    display: block;
+
+    animation: revealPage 1s ease forwards;
+}
+
+@keyframes revealPage {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TIPOGRAFIA
+========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 500;
+}
+
+.eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--blue-light);
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-content {
+    max-width: 700px;
+}
+
+.small-line {
+    width: 45px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 0 auto 25px;
+}
+
+h1 {
+    font-size: clamp(48px, 8vw, 85px);
+
+    line-height: .9;
+
+    letter-spacing: -2px;
+}
+
+.intro-text {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin: 35px 0;
+}
+
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+========================================================= */
+
+.main-button {
+    border: 1px solid rgba(201, 164, 92, .6);
+
+    background: rgba(36, 152, 208, .12);
+
+    color: var(--cream);
+
+    padding: 16px 28px;
+
+    border-radius: 50px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background .3s,
+        transform .3s,
+        box-shadow .3s;
+}
+
+.main-button span {
+    color: var(--blue-light);
+
+    margin-right: 8px;
+
+    font-size: 18px;
+}
+
+.main-button:hover {
+    background: rgba(36, 152, 208, .25);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 35px rgba(36, 152, 208, .18);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 25px 50px;
+}
+
+.hero-section h2 {
+    font-size: clamp(60px, 11vw, 110px);
+
+    line-height: .82;
+
+    letter-spacing: -3px;
+}
+
+.heart {
+    color: var(--blue-light);
+
+    font-size: 42px;
+
+    margin: 35px 0 20px;
+
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+.hero-subtitle {
+    color: var(--text-light);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+.date-card {
+    width: min(90%, 480px);
+
+    margin: 0 auto 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    border-top:
+        1px solid rgba(201, 164, 92, .4);
+
+    border-bottom:
+        1px solid rgba(201, 164, 92, .4);
+}
+
+.date-number {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 95px;
+
+    line-height: .7;
+
+    color: var(--blue-light);
+}
+
+.date-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.date-info span {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+}
+
+.date-info strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+.date-info small {
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   HORÁRIO
+========================================================= */
+
+.pickup-section {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 150px;
+
+    padding: 0 25px;
+}
+
+.time-icon {
+    display: inline-block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 64px;
+
+    color: var(--blue-light);
+
+    border:
+        1px solid rgba(36, 152, 208, .35);
+
+    padding: 20px 35px;
+
+    border-radius: 100px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 0 50px rgba(36, 152, 208, .08);
+}
+
+.pickup-section h3 {
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+.pickup-section > p:last-child {
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+.pickup-section strong {
+    color: var(--blue-light);
+}
+
+
+/* =========================================================
+   ROTEIRO
+========================================================= */
+
+.timeline-section {
+    max-width: 800px;
+
+    margin: 0 auto 150px;
+
+    padding: 0 25px;
+}
+
+.timeline-section > .eyebrow,
+.timeline-section > h3 {
+    text-align: center;
+}
+
+.timeline-section h3 {
+    font-size: 48px;
+
+    margin-bottom: 70px;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 28px;
+
+    top: 25px;
+
+    bottom: 25px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(36, 152, 208, .5),
+            transparent
+        );
+}
+
+.timeline-item {
+    display: flex;
+
+    gap: 30px;
+
+    margin-bottom: 65px;
+
+    position: relative;
+}
+
+.timeline-icon {
+    flex-shrink: 0;
+
+    width: 57px;
+    height: 57px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--navy);
+
+    border:
+        1px solid rgba(36, 152, 208, .5);
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    z-index: 1;
+}
+
+.timeline-content {
+    padding-top: 5px;
+}
+
+.timeline-time {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+}
+
+.timeline-content h4 {
+    font-size: 42px;
+
+    margin: 3px 0 8px;
+}
+
+.timeline-content p {
+    max-width: 450px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+.message-section {
+    max-width: 750px;
+
+    margin: 0 auto 150px;
+
+    padding: 0 25px;
+}
+
+.message-card {
+    position: relative;
+
+    padding: 60px 50px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.15);
+}
+
+.quote-mark {
+    font-family: "Cormorant Garamond", serif;
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 30px;
+
+    font-size: 80px;
+
+    color:
+        rgba(36,152,208,.3);
+}
+
+.message-card p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    color: var(--text-light);
+
+    margin-bottom: 20px;
+}
+
+.message-card p:first-of-type {
+    color: var(--cream);
+}
+
+.message-card .highlight {
+    color: var(--cream);
+
+    font-size: 27px;
+}
+
+.message-heart {
+    color: var(--blue-light);
+
+    font-size: 35px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   RESPOSTA
+========================================================= */
+
+.answer-section {
+    text-align: center;
+
+    padding: 50px 25px 150px;
+}
+
+.answer-section h2 {
+    font-size: clamp(55px, 9vw, 85px);
+
+    margin-bottom: 45px;
+}
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.yes-button,
+.think-button {
+    border-radius: 50px;
+
+    padding: 16px 28px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.yes-button {
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    box-shadow:
+        0 10px 35px rgba(36,152,208,.2);
+}
+
+.yes-button:hover {
+    transform: translateY(-3px);
+
+    background: var(--blue-light);
+}
+
+.think-button {
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background: transparent;
+
+    color: var(--text-light);
+}
+
+.think-button:hover {
+    border-color:
+        rgba(255,255,255,.35);
+}
+
+.answer-message {
+    min-height: 25px;
+
+    margin-top: 25px;
+
+    color: var(--blue-light);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 25px 60px;
+
+    color: rgba(220,234,243,.6);
+}
+
+.footer-line {
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 0 auto 25px;
+}
+
+footer p {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+footer span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    color: var(--cream);
+}
+
+footer small {
+    display: block;
+
+    margin-top: 25px;
+
+    font-size: 9px;
+
+    opacity: .55;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(3,13,22,.9);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity .5s;
+}
+
+.modal.active {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.modal-content {
+    width: min(100%, 500px);
+
+    text-align: center;
+
+    padding: 60px 35px;
+
+    background: var(--navy);
+
+    border:
+        1px solid rgba(36,152,208,.3);
+
+    border-radius: 8px;
+
+    transform: translateY(20px);
+
+    transition: transform .5s;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-heart {
+    font-size: 55px;
+
+    color: var(--blue-light);
+
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    font-size: 55px;
+
+    line-height: .9;
+
+    margin-bottom: 25px;
+}
+
+.modal-content p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.modal-content strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--blue-light);
+}
+
+.modal-route {
+    font-size: 30px;
+
+    margin: 30px 0;
+}
+
+.modal-final {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px !important;
+
+    color: var(--cream) !important;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .date-card {
+        margin-bottom: 100px;
+    }
+
+    .date-number {
+        font-size: 75px;
+    }
+
+    .date-info strong {
+        font-size: 27px;
+    }
+
+    .pickup-section h3,
+    .timeline-section h3 {
+        font-size: 38px;
+    }
+
+    .time-icon {
+        font-size: 50px;
+    }
+
+    .message-card {
+        padding: 55px 28px 40px;
+    }
+
+    .message-card p {
+        font-size: 20px;
+    }
+
+    .message-card .highlight {
+        font-size: 23px;
+    }
+
+    .timeline-item {
+        gap: 20px;
+    }
+
+    .timeline-content h4 {
+        font-size: 35px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FUNDO
+===================================================== -->
+
+<div class="background">
+
+    <div class="glow glow-1"></div>
+
+    <div class="glow glow-2"></div>
+
+    <div class="stars"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TELA INICIAL
+===================================================== -->
+
+<main id="intro">
+
+    <div class="intro-content">
+
+        <div class="small-line"></div>
+
+        <p class="eyebrow">
+            UM PEQUENO CONVITE
+        </p>
+
+        <h1>
+            Giu,<br>
+            tenho uma pergunta<br>
+            para você.
+        </h1>
+
+        <p class="intro-text">
+            E eu decidi que um convite comum<br>
+            não seria suficiente.
+        </p>
+
+        <button
+            id="openInvite"
+            class="main-button">
+
+            <span>♡</span>
+
+            Abrir convite
+
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     CONVITE
+===================================================== -->
+
+<main id="invite">
+
+
+    <!-- HERO -->
+
+    <section class="hero-section">
+
+        <p class="eyebrow">
+            PARA VOCÊ, GIU
+        </p>
+
+        <h2>
+            Você aceita<br>
+            sair comigo?
+        </h2>
+
+        <div class="heart">
+            ♡
+        </div>
+
+        <p class="hero-subtitle">
+            Eu preparei uma noite simples,<br>
+            mas que gostaria muito de passar com você.
+        </p>
+
+    </section>
+
+
+
+    <!-- DATA -->
+
+    <section class="date-card">
+
+        <div class="date-number">
+            26
+        </div>
+
+        <div class="date-info">
+
+            <span>
+                SÁBADO
+            </span>
+
+            <strong>
+                SETEMBRO
+            </strong>
+
+            <small>
+                2026
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HORÁRIO -->
+
+    <section class="pickup-section">
+
+        <div class="time-icon">
+            17:00
+        </div>
+
+        <p class="eyebrow">
+            O COMEÇO DA NOSSA NOITE
+        </p>
+
+        <h3>
+            Eu passo para te buscar.
+        </h3>
+
+        <p>
+            Às <strong>17h</strong>, o passeio começa.
+        </p>
+
+    </section>
+
+
+
+    <!-- ROTEIRO -->
+
+    <section class="timeline-section">
+
+        <p class="eyebrow">
+            NOSSO PEQUENO ROTEIRO
+        </p>
+
+        <h3>
+            Uma noite em três capítulos.
+        </h3>
+
+
+        <div class="timeline">
+
+
+            <!-- CAFÉ -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    ☕
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-time">
+                        PRIMEIRO
+                    </span>
+
+                    <h4>
+                        Café
+                    </h4>
+
+                    <p>
+                        Um café, uma boa conversa
+                        e um tempinho só nosso.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SORVETE -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    🍦
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-time">
+                        DEPOIS
+                    </span>
+
+                    <h4>
+                        Sorvete
+                    </h4>
+
+                    <p>
+                        Porque uma noite boa
+                        sempre pode ficar um pouco melhor.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CINEMA -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    🎬
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-time">
+                        E, POR FIM
+                    </span>
+
+                    <h4>
+                        Cinema
+                    </h4>
+
+                    <p>
+                        Para terminar a noite juntos,
+                        assistindo a um filme.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MENSAGEM
+    ================================================== -->
+
+    <section class="message-section">
+
+        <div class="message-card">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <p>
+                Giu,
+            </p>
+
+            <p>
+                eu queria fazer esse convite
+                de um jeito um pouco diferente.
+            </p>
+
+            <p>
+                Não precisa ser uma ocasião especial,
+                nem precisa ter um motivo enorme.
+            </p>
+
+            <p>
+                Só quero passar um sábado gostoso
+                com você, conversar, tomar um café,
+                tomar um sorvete e terminar a noite
+                no cinema.
+            </p>
+
+            <p class="highlight">
+                E, sinceramente, acho que fica
+                muito melhor se for com você.
+            </p>
+
+            <div class="message-heart">
+                ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESPOSTA
+    ================================================== -->
+
+    <section class="answer-section">
+
+        <p class="eyebrow">
+            ENTÃO...
+        </p>
+
+        <h2>
+            O que você acha?
+        </h2>
+
+        <div class="buttons">
+
+            <button
+                id="yesButton"
+                class="yes-button">
+
+                Sim, eu aceito 💙
+
+            </button>
+
+
+            <button
+                id="thinkButton"
+                class="think-button">
+
+                Vou pensar... 👀
+
+            </button>
+
+        </div>
+
+        <p
+            id="answerMessage"
+            class="answer-message">
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <div class="footer-line"></div>
+
+        <p>
+            Sábado · 26 de setembro · 17h
+        </p>
+
+        <span>
+            Feito especialmente para Giu 💙
+        </span>
+
+        <small>
+            P.S.: O esquema de cores foi escolhido por
+            motivos extremamente científicos. 🦆
+        </small>
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     MODAL DE ACEITE
+===================================================== -->
+
+<div
+    id="successModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-heart">
+            ♡
+        </div>
+
+        <p class="eyebrow">
+            ENTÃO ESTÁ COMBINADO
+        </p>
+
+        <h2>
+            Temos um encontro. 💙
+        </h2>
+
+        <p>
+            Sábado, 26 de setembro.
+        </p>
+
+        <strong>
+            Te busco às 17h.
+        </strong>
+
+        <div class="modal-route">
+            ☕ → 🍦 → 🎬
+        </div>
+
+        <p class="modal-final">
+            Mal posso esperar.
+        </p>
+
+        <button
+            id="closeModal"
+            class="main-button">
+
+            Fechar
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const intro =
+    document.getElementById("intro");
+
+const invite =
+    document.getElementById("invite");
+
+const openInvite =
+    document.getElementById("openInvite");
+
+const yesButton =
+    document.getElementById("yesButton");
+
+const thinkButton =
+    document.getElementById("thinkButton");
+
+const answerMessage =
+    document.getElementById("answerMessage");
+
+const successModal =
+    document.getElementById("successModal");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+
+
+/* =====================================================
+   ABRIR CONVITE
+===================================================== */
+
+openInvite.addEventListener("click", () => {
+
+    intro.classList.add("hide");
+
+    setTimeout(() => {
+
+        intro.style.display = "none";
+
+        invite.classList.add("visible");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+
+    }, 700);
+
+});
+
+
+
+/* =====================================================
+   BOTÃO SIM
+===================================================== */
+
+yesButton.addEventListener("click", () => {
+
+    successModal.classList.add("active");
+
+    createConfetti();
+
+});
+
+
+
+/* =====================================================
+   BOTÃO "VOU PENSAR"
+===================================================== */
+
+thinkButton.addEventListener("mouseenter", () => {
+
+    const maxX = 100;
+
+    const maxY = 50;
+
+    const x =
+        Math.random() * maxX - maxX / 2;
+
+    const y =
+        Math.random() * maxY - maxY / 2;
+
+    thinkButton.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+});
+
+
+thinkButton.addEventListener("click", () => {
+
+    answerMessage.textContent =
+        "Tudo bem... mas espero que seja um sim. 👀💙";
+
+});
+
+
+
+/* =====================================================
+   FECHAR MODAL
+===================================================== */
+
+closeModal.addEventListener("click", () => {
+
+    successModal.classList.remove("active");
+
+});
+
+
+
+/* =====================================================
+   CONFETES
+===================================================== */
+
+function createConfetti() {
+
+    const colors = [
+        "#2498d0",
+        "#53b9e8",
+        "#c9a45c",
+        "#fff8ee"
+    ];
+
+
+    for (let i = 0; i < 80; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+
+        confetti.style.position =
+            "fixed";
+
+        confetti.style.width =
+            "6px";
+
+        confetti.style.height =
+            "6px";
+
+        confetti.style.borderRadius =
+            "50%";
+
+        confetti.style.background =
+            colors[
+                Math.floor(
+                    Math.random() * colors.length
+                )
+            ];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.top =
+            "-10px";
+
+        confetti.style.zIndex =
+            "200";
+
+        confetti.style.pointerEvents =
+            "none";
+
+
+        document.body.appendChild(confetti);
+
+
+        const duration =
+            Math.random() * 2000 + 2000;
+
+
+        const x =
+            (Math.random() - .5) * 500;
+
+
+        const rotation =
+            Math.random() * 720;
+
+
+        confetti.animate(
+
+            [
+                {
+                    transform:
+                        "translate(0, 0) rotate(0deg)",
+
+                    opacity: 1
+                },
+
+                {
+                    transform:
+                        `translate(${x}px, 110vh) rotate(${rotation}deg)`,
+
+                    opacity: 0
+                }
+            ],
+
+            {
+                duration: duration,
+
+                easing:
+                    "cubic-bezier(.2,.8,.3,1)"
+            }
+
+        );
+
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, duration);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
